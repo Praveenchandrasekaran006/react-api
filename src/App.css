@@ -1,0 +1,243 @@
+.atm{
+  margin: 0;
+  padding: 9px;
+  overflow: hidden;
+  background-color: #95e0c7;
+
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #95e0c7;
+  
+}
+
+  .Logo{
+    background-image: url(./atmlogo.jpg);
+    border: 1px solid #95e0c7;
+    border-radius: 1px;
+    padding: 26px;
+    width: 26px;
+  }
+
+.li {
+  display: inline;
+  float:left;
+}
+
+.li a {
+  display: block;
+  color:cornsilk;
+  text-align: center;
+  padding: 15px 129px;
+  background-color: #173e49;
+}
+
+.validateli {
+  display: inline;
+  float:left;
+}
+
+.validateli a {
+  display: block;
+  color:cornsilk;
+  text-align: center;
+  padding: 10px 83px;
+  background-color: #173e49;
+}
+
+.Image{
+  background-image: url(./atmimage.gif) ;opacity: 1.2;
+  
+  background-size: 720px 720px;
+  border: 20px solid #95e0c7;
+  border-radius: 1px;
+   padding: none; 
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.load{
+  border: 5px solid #95e0c7;
+  border-radius: 5px;
+  background-color: none;
+  opacity: 2.5;
+  width: 300px;
+  padding: 20px;
+  
+}
+
+
+
+.atmoperationform{
+  border: 5px solid #95e0c7;
+  border-radius: 5px;
+  background-color: none;
+  opacity: 2.5;
+  width: 300px;
+  padding: 20px;
+  
+}
+
+.inputload{
+  border-color: #95e0c7;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+
+
+.loadsubmit{
+  width: 40%;
+  background-color: #95e0c7;
+  color: rgb(10, 10, 10);
+  padding: 14px 20px;
+  margin: 8px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loadbox{
+  width: 1490px;
+  height: 600px;
+  background-color: none;
+  padding-top: 60px;
+  padding-left: 60px;
+  padding-right: 0px;
+}
+
+.leftloadbox{
+  float: left;
+  width: 300px;
+  height: 360px;
+  background-color: rgb(241, 213, 50);
+  border: #95e0c7;
+  margin-left: 160px;
+
+}
+
+.leftloginbox{
+  float: left;
+  width: 300px;
+  height: 280px;
+  background-color: rgb(241, 213, 50);
+  border: #95e0c7;
+  margin-left: 10px;
+
+}
+
+.leftwithdrawalbox{
+  float: left;
+  width: 300px;
+  height: 180px;
+  background-color: rgb(241, 213, 50);
+  border: #95e0c7;
+  margin-left: 250px;
+}
+
+.lefttransferbox{
+  float: left;
+  width: 300px;
+  height: 265px;
+  background-color: rgb(241, 213, 50);
+  border: #95e0c7;
+  margin-left: 520px;
+}
+
+.leftminibox{
+  float: left;
+  width: 300px;
+  height: 265px;
+  background-color:none;
+  border: #95e0c7;
+  margin-left: 0px;
+}
+
+.righttransferbox{
+  float: right;
+  width: 260px;
+  height: 160px;
+  background-color: none;
+  border-radius: 5px;
+  border-color: #95e0c7;
+  margin-right: 0px;
+  padding-top: 40px;
+}
+
+.rightloadbox{
+  float: right;
+  width: 240px;
+  height: 160px;
+  background-color: none;
+  border-radius: 5px;
+  border-color: #95e0c7;
+  margin-right: 180px;
+  padding-top: 10px;
+
+}
+
+.rightloginbox{
+  float: right;
+  width: 1090px;
+  height: 480px;
+  background-color: none;
+  border-radius: 5px;
+  border-color: #95e0c7;
+  margin-right: 10px;
+  
+
+}
+
+.rightWithdrawalbox{
+  float: right;
+  width: 240px;
+  height: 100px;
+  background-color: none;
+  border-radius: 5px;
+  border-color: #95e0c7;
+  margin-right: 90px;
+  
+
+}  
+
+.reacttable{
+  float:left;
+  width: 880px;
+  height: 350px;
+  background-color:rgb(241, 213, 50);
+  border-radius: 5px;
+  border-color: #95e0c7;
+  margin-left: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.minireacttable{
+  float:left;
+  width: 880px;
+  height: 350px;
+  background-color:rgb(241, 213, 50);
+  border-radius: 5px;
+  border-color: #95e0c7;
+  margin-left: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
