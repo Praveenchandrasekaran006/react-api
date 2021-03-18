@@ -31,7 +31,19 @@ class CashWithdrawal extends React.Component
             method: 'post',
             url: 'http://localhost:8080/atmprocesswebapplication/withdraw',
             data: obj,
-            }).then(res=>{this.props.SET_CashWithdrawal(res.data)});
+            }).then(res=>{this.props.SET_CashWithdrawal(res.data)})
+            .catch(function(error){
+                if(error.response.status === 100)
+                   alert("Insufficient amount in ATM"); 
+                else if(error.response.status === 101)
+                    alert("Insufficient account Balance");
+                else if(error.response.status === 406)
+                    alert("Enter the amount within 100 - 10000");
+                else if(error.response.status === 407)
+                    alert("Enter amount in multiples of 10");
+                else if(error.response.status === 500)
+                   alert("An error Occured in Machine");
+            });  
         }
         
         

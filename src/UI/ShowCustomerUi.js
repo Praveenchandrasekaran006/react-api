@@ -13,7 +13,11 @@ class ShowCustomerUi extends React.Component
             method: 'post',
             url: 'http://localhost:8080/atmprocesswebapplication/show',
             data: obj,
-        }).then(res=>{this.props.SET_CustomerDetails(res.data)});
+        }).then(res=>{this.props.SET_CustomerDetails(res.data)})
+        .catch(function(error){
+            if(error.response.status === 500)
+               alert("An error Occured in Machine");
+        });  
     }
 
     render()

@@ -35,11 +35,9 @@ class AtmOperations extends React.Component
             }).then(res=>{ 
                 this.props.SET_Validation(res.data)
             }).catch(function(error){
-                     if(error.response.status === 401)
-                        alert("Invalid Account Number"); 
-                     else if(error.response.status === 400)
-                         alert("Invalid Pin Number");
-                   else if(error.response.status === 500)
+                     if(error.response.status === 401 || error.response.status === 400)
+                        alert("Invalid user Credentials"); 
+                    else if(error.response.status === 500)
                         alert("An error Occured in Machine");
                  });  
         }
@@ -106,7 +104,7 @@ const mapStateToProps= (state) =>{
   
   export default connect(mapStateToProps, mapDispatchToProps)(AtmOperations);
 
-  
+
 // output = {JSON.stringify(validate)}
 // let {isCorrect} = this.state;
 //export default AtmOperations

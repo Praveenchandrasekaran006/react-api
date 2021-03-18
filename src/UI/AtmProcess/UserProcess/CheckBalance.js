@@ -10,7 +10,11 @@ class CheckBalance extends React.Component
         axios({
             method: 'get',
             url: 'http://localhost:8080/atmprocesswebapplication/check',
-        }).then(res=>{this.props.SET_AccountBalance(res.data)});
+        }).then(res=>{this.props.SET_AccountBalance(res.data)})
+        .catch(function(error){
+            if(error.response.status === 500)
+               alert("An error Occured in Machine");
+        });
     }
     
     render()
@@ -40,7 +44,7 @@ const mapStateToProps= (state) =>{
   export default connect(mapStateToProps, mapDispatchToProps)(CheckBalance);
 
 
-  
+
 //export default CheckBalance
 //let {isCorrect} = this.state;
 //isCorrect ? JSON.stringify() : ""

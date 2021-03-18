@@ -11,7 +11,11 @@ class MiniStatement extends React.Component
         axios({
             method: 'get',
             url: 'http://localhost:8080/atmprocesswebapplication/ministate',
-        }).then(res=>{this.props.SET_MiniStatement(res.data)});
+        }).then(res=>{this.props.SET_MiniStatement(res.data)})
+        .catch(function(error){
+            if(error.response.status === 500)
+               alert("An error Occured in Machine");
+        });
     }
     
     render()

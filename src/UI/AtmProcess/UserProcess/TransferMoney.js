@@ -11,7 +11,6 @@ class TransferMoney extends React.Component
             receive_acc_no: 0,
             amount: 0,
         };
-        
     }
 
     handleSubmit = (event) =>
@@ -37,7 +36,19 @@ class TransferMoney extends React.Component
             method: 'post',
             url: 'http://localhost:8080/atmprocesswebapplication/transfer',
             data: obj,
-            }).then(res=>{this.props.SET_TransferMoney(res.data)});
+            }).then(res=>{this.props.SET_TransferMoney(res.data)})
+            .catch(function(error){
+                if(error.response.status === 101)
+                    alert("Insufficient account Balance");
+                else if(error.response.status === 404)
+                    alert("Cannot Transfer!! Enter the amount within 100 - 10000");
+                else if(error.response.status === 405)
+                    alert("Invalid Receiver Credentials");
+                else if(error.response.status === 407)
+                    alert("Enter amount in multiples of 10");
+                else if(error.response.status === 500)
+                   alert("An error Occured in Machine");
+            });
         }
         
         

@@ -31,7 +31,11 @@ class LoadCashUi extends React.Component
             method: 'post',
             url: 'http://localhost:8080/atmprocesswebapplication/load',
             data: obj,
-            }).then(res=>{this.props.SET_LoadCash(res.data)});
+            }).then(res=>{this.props.SET_LoadCash(res.data)})
+            .catch(function(error){
+               if(error.response.status === 500)
+                   alert("An error Occured in Machine");
+            }); 
             
         }
         event.preventDefault();
