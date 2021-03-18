@@ -10,14 +10,7 @@ class CashWithdrawal extends React.Component
         super();
         this.state ={
             amount: 0,
-            isCorrect: false
         };
-        
-    }
-
-    componentDidMount()
-    {
-        this.setState({isCorrect: true});
     }
 
     handleSubmit = (event) =>
@@ -44,7 +37,7 @@ class CashWithdrawal extends React.Component
         
         event.preventDefault();
     }
-//this.setState({balance_amount: res.data})
+
     handleAmountChange = (event) =>{
         this.setState({amount: event.target.value});
     }
@@ -52,7 +45,7 @@ class CashWithdrawal extends React.Component
 
     render()
     {
-        let {isCorrect, amount} = this.state;
+        let {amount} = this.state;
         return (    
             <div>      
             <div className = 'leftwithdrawalbox'>  
@@ -66,7 +59,9 @@ class CashWithdrawal extends React.Component
                 </form>
             </center>
             </div>
-            <div className = 'rightWithdrawalbox'>{isCorrect ? (<PrintCashWithdrawal/>) : ""}</div>
+                <div className = 'rightWithdrawalbox'>
+                    <PrintCashWithdrawal/>
+                </div>
             </div>
         );
     }
@@ -89,3 +84,10 @@ const mapStateToProps= (state) =>{
   export default connect(mapStateToProps, mapDispatchToProps)(CashWithdrawal);
 
 //export default CashWithdrawal
+//this.setState({balance_amount: res.data})
+//isCorrect ? () : ""
+ // isCorrect: true
+  // componentDidMount()
+    // {
+    //     this.setState({isCorrect: true});
+    // }

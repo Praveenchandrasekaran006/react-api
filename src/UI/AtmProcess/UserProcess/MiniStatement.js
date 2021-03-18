@@ -3,37 +3,23 @@ import axios from 'axios';
 import PrintMiniStatement from './PrintMiniStatement';
 import {connect} from 'react-redux';
 import {SET_MiniStatement} from 'C://Users/praveen-pt3815/react-api/src/UI/redux/actions/loadAction';
+
 class MiniStatement extends React.Component
 {
-    constructor()
-    {
-        super();
-        this.state ={
-            isCorrect: false
-        };
-        
-    }
-
     componentDidMount()
     {
-        let obj = JSON.stringify({auth: 'hello'});
         axios({
-            method: 'post',
+            method: 'get',
             url: 'http://localhost:8080/atmprocesswebapplication/ministate',
-            data: obj,
         }).then(res=>{this.props.SET_MiniStatement(res.data)});
-        this.setState({isCorrect:true});
     }
-    //.then(res=>{this.setState({ministatement_details: res.data})});
+    
     render()
     {
-        let {isCorrect} = this.state;
         return (
-            
             <div className = 'leftminibox'>
-                {isCorrect? <PrintMiniStatement/> : ""}
+                <PrintMiniStatement/>
             </div>
-            
         );
     }
 }
@@ -48,10 +34,26 @@ const mapStateToProps= (state) =>{
   const mapDispatchToProps = (dispatch) =>{ //for updating data
     return {
         SET_MiniStatement: (value)=>dispatch(SET_MiniStatement(value)),  
-         
     }
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(MiniStatement);
+
+
 //export default MiniStatement
+//.then(res=>{this.setState({ministatement_details: res.data})});
+//{isCorrect?  : ""}
+// let {isCorrect} = this.state;
+// data: obj,
+// let obj = JSON.stringify({auth: 'hello'});
+// this.setState({isCorrect:true});
+// constructor()
+//     {
+//         super();
+//         this.state ={
+//             // isCorrect: false
+//         };
+        
+//     }
+
 

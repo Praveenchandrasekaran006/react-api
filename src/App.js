@@ -12,10 +12,7 @@ class App extends Component{
   render()
   {
     return (
-
-
     <div >
-   
       <center><h2 className = 'atm'>ATM</h2></center>
       
       <Router>

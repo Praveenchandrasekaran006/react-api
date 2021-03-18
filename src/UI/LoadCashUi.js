@@ -14,14 +14,8 @@ class LoadCashUi extends React.Component
             five_hundreds: 0,
             thousands: 0,
         };
-        this.obj = '';
-        this.load = '';
-        this.isCorrect = false;
     }
-    componentDidMount()
-    {
-        this.setState({isCorrect: true});
-    }
+   
     handleSubmit = (event) =>
     {
         let {hundreds, five_hundreds, thousands} = this.state;
@@ -33,7 +27,6 @@ class LoadCashUi extends React.Component
         {
             const obj = JSON.stringify(this.state);
             alert("Insert succesfull");
-       
             axios({
             method: 'post',
             url: 'http://localhost:8080/atmprocesswebapplication/load',
@@ -41,8 +34,6 @@ class LoadCashUi extends React.Component
             }).then(res=>{this.props.SET_LoadCash(res.data)});
             
         }
-        
-        
         event.preventDefault();
     }
 
@@ -58,8 +49,6 @@ class LoadCashUi extends React.Component
 
     render()
     {
-        let {isCorrect} = this.state;
-       
         return (       
              
             <div className = 'loadbox'> 
@@ -87,7 +76,7 @@ class LoadCashUi extends React.Component
                 </div>
 
                 <div className = 'rightloadbox'>
-                    {isCorrect? <PrintLoadCash/> : ""}
+                    <PrintLoadCash/>
                 </div>
 
             </div>

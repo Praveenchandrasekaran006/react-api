@@ -1,4 +1,5 @@
 let initial_state = {
+    
     available_amount: {},
     validate_output: {},
     customer_details: [],

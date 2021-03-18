@@ -3,18 +3,9 @@ import axios from 'axios';
 import PrintCustomerDetails from './components/PrintCustomerDetails';
 import { SET_CustomerDetails } from "./redux/actions/loadAction";
 import {connect} from 'react-redux';
+
 class ShowCustomerUi extends React.Component
 {
-
-    constructor()
-    {
-        super();
-        this.state ={
-            isCorrect: false
-        };
-    }
-
-    
     componentDidMount()
     {
         let obj = JSON.stringify({auth: 'hello'});
@@ -23,22 +14,18 @@ class ShowCustomerUi extends React.Component
             url: 'http://localhost:8080/atmprocesswebapplication/show',
             data: obj,
         }).then(res=>{this.props.SET_CustomerDetails(res.data)});
-        this.setState({isCorrect: true});
     }
 
     render()
     {
-        let {isCorrect} = this.state;
         return (
             <div className = 'loadbox'>
-                {isCorrect? <PrintCustomerDetails/> : ""}     
-            </div>
-            
-            
-            
+              <PrintCustomerDetails/>
+            </div> 
         );
     }
 }
+
 const mapStateToProps= (state) =>{
     return {
         loadReducer : state.loadReducer,

@@ -12,15 +12,8 @@ class AtmOperations extends React.Component
         this.state = {
             acc_no: 0,
             pin_no: 0,
-            isCorrect: false,
         };
-        this.error = {};
     }
-
-   componentDidMount()
-   {
-        this.setState({isCorrect: true});
-   }
     
     handleSubmit = (event) =>
     {       
@@ -64,7 +57,6 @@ class AtmOperations extends React.Component
 
     render()
     {    
-        let {isCorrect} = this.state;
         return (  
         
             <div className = 'loadbox'> 
@@ -88,9 +80,8 @@ class AtmOperations extends React.Component
                     </center>
                 </div>
                 
-
                 <div className = 'rightloginbox'>
-                    {isCorrect ?<ValidateAccountPin/>  : ""} 
+                    <ValidateAccountPin/> 
                 </div>
                  
             </div>
@@ -115,12 +106,16 @@ const mapStateToProps= (state) =>{
   
   export default connect(mapStateToProps, mapDispatchToProps)(AtmOperations);
 
+  
 // output = {JSON.stringify(validate)}
-
+// let {isCorrect} = this.state;
 //export default AtmOperations
 
-
-
+//    componentDidMount()
+//    {
+//         this.setState({isCorrect: true});
+//    }
+// {isCorrect ? : ""}
 //import PrintLoadCash from './components/PrintLoadCash';
 // .then(res=>{this.setState({validate: res.data})}).catch(function(error){
 //     if(error.response.status === 401)

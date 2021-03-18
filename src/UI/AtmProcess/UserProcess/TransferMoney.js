@@ -10,14 +10,8 @@ class TransferMoney extends React.Component
         this.state ={
             receive_acc_no: 0,
             amount: 0,
-            isCorrect: false
         };
         
-    }
-
-    componentDidMount()
-    {
-        this.setState({isCorrect: true})
     }
 
     handleSubmit = (event) =>
@@ -49,7 +43,7 @@ class TransferMoney extends React.Component
         
         event.preventDefault();
     }
-//this.setState({balance_amount: res.data})
+
     handleReceiveAccountChange = (event) =>{
         this.setState({receive_acc_no: event.target.value});
     }
@@ -60,8 +54,7 @@ class TransferMoney extends React.Component
 
     render()
     {
-        let {isCorrect,receive_acc_no, amount} = this.state;
-       
+        let {receive_acc_no, amount} = this.state;
         return (          
             <div>  
                 <div className = 'lefttransferbox'>
@@ -79,7 +72,7 @@ class TransferMoney extends React.Component
                     </form>
                 </center>
                 </div>
-                <div className = 'righttransferbox'><h6>The Balance amount is {isCorrect? (this.props.loadReducer.sender_balance.acc_balance): ""}</h6></div>
+                <div className = 'righttransferbox'><h6>The Balance amount is {this.props.loadReducer.sender_balance.acc_balance}</h6></div>
                 
             </div>
         );
@@ -101,4 +94,12 @@ const mapStateToProps= (state) =>{
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(TransferMoney);
+
+//isCorrect? (): ""
 //export default TransferMoney
+//this.setState({balance_amount: res.data})
+
+    // componentDidMount()
+    // {
+    //     this.setState({isCorrect: true})
+    // }
